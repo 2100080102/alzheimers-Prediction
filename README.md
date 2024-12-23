@@ -1,6 +1,8 @@
 # Alzheimer's Disease Detection Project
 
-This project employs deep learning techniques to detect and classify Alzheimer's disease stages based on MRI images. By combining Convolutional Neural Networks (CNN) with Recurrent Neural Networks (RNN), the model effectively analyzes both spatial and sequential features of the images.
+This project utilizes deep learning techniques, specifically **Convolutional Neural Networks (CNN)** and **Long Short-Term Memory (LSTM)** networks, to classify Alzheimer's disease stages based on MRI images. The hybrid architecture extracts both spatial and sequential features, enabling accurate classification.
+
+---
 
 ## Features
 - **Stage Classification**: Predicts one of the following stages:
@@ -8,8 +10,8 @@ This project employs deep learning techniques to detect and classify Alzheimer's
   - Moderate
   - Non-Demented
   - Very Mild
-- **Model Architecture**: Combines Convolutional Neural Networks (CNN) and Long Short-Term Memory (LSTM) networks for enhanced prediction accuracy.
-- **Frameworks and Libraries Used**: TensorFlow for model creation, OpenCV for image preprocessing, and NumPy for data manipulation.
+- **Model Architecture**: Combines CNN for spatial feature extraction and LSTM for sequential pattern analysis.
+- **Frameworks and Libraries Used**: TensorFlow for model development, OpenCV for image preprocessing, and NumPy for efficient data handling.
 
 ---
 
@@ -18,38 +20,37 @@ This project employs deep learning techniques to detect and classify Alzheimer's
 ### 1. Technologies Used
 - **Programming Language**: Python
 - **Frameworks and Libraries**:
-  - TensorFlow: For building and training the CNN-RNN hybrid model.
-  - OpenCV: For image loading and preprocessing.
-  - NumPy: For numerical operations.
-- **Dataset**: MRI images of Alzheimer’s patients categorized into different stages.
+  - TensorFlow: For building and training the CNN-LSTM hybrid model.
+  - OpenCV: For image preprocessing (resizing, normalization).
+  - NumPy: For data manipulation and preparation.
+- **Dataset**: MRI images of Alzheimer's patients categorized into four stages.
 - **Tools**: 
   - PyCharm: Development environment.
-  - CustomTkinter: For GUI integration (future plans, if applicable).
-  - GitHub: For version control and repository management.
+  - GitHub: Version control and project hosting.
 
 ---
 
 ### 2. How the Project Was Built
 1. **Dataset Preparation**:
-   - Collected MRI image data representing four stages of Alzheimer's disease.
-   - Preprocessed images using OpenCV to normalize pixel values and resize images to a consistent size (150x150).
-   - Organized data into respective folders for training, validation, and testing.
+   - Collected MRI images representing four stages of Alzheimer's disease.
+   - Preprocessed images to normalize pixel values and resize them to 150x150 dimensions using OpenCV.
+   - Organized the data into respective folders for training, validation, and testing.
 
 2. **Model Design**:
-   - Built a Convolutional Neural Network (CNN) for spatial feature extraction from MRI images.
-   - Integrated an LSTM layer to analyze sequential features and patterns across the data.
-   - Compiled the model with categorical cross-entropy as the loss function and Adam optimizer.
+   - Designed a **CNN** to capture spatial features from MRI images.
+   - Added an **LSTM layer** to analyze sequential patterns across the extracted features.
+   - Used categorical cross-entropy as the loss function and Adam optimizer for training.
 
 3. **Training**:
    - Split the dataset into training and validation sets.
-   - Trained the model on preprocessed MRI images, adjusting hyperparameters for optimal accuracy.
+   - Trained the model on the processed dataset, optimizing hyperparameters to improve classification accuracy.
 
 4. **Testing and Evaluation**:
-   - Evaluated the trained model using a test set.
-   - Achieved classification accuracy and generated predictions.
+   - Evaluated the trained model on a test dataset.
+   - Classified images into one of the four stages based on model predictions.
 
 5. **Prediction Script**:
-   - Developed `index2.py` to load the trained model and predict the stage of Alzheimer's from a given image.
+   - Developed `index2.py` to load the trained CNN-LSTM model and predict the stage of Alzheimer's for a given input image.
 
 ---
 
@@ -59,7 +60,7 @@ Alzheimer_Detection_Project/
 ├── Dataset/                   # Dataset folder (not fully pushed to GitHub)
 │   └── [subfolders for data]  # Contains MRI images
 ├── model/                     # Folder for saved model files
-│   └── CNN_RNN_save.h5        # Pre-trained model
+│   └── CNN_RNN_save.h5        # Pre-trained CNN-LSTM model
 ├── scripts/                   # Python scripts for training and prediction
 │   ├── index2.py              # Script for making predictions
 │   └── cnn.py                 # Script for model training
